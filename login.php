@@ -8,7 +8,7 @@ if(isset($_SESSION['usuario'])){
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
-    $password = hash('sha512', $password);
+    $password = hash('sha512',$password);
 
     try {
         $conexion = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
@@ -16,10 +16,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "Error: " . $e->getMessage();
     }
 
-    $statement = $conexion->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre AND :contra = :contra');
-    $statement->execute(array(':nombre' => $usuario, ':contra' => $password));
-
+    $statement = $conexion->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre AND pass = :pass');
+    $statement->execute(array(':nombre' => $usuario, ':pass' => $password));
     $resultado = $statement->fetch();
+    
+    var_dump($resultado);
+    print_r($resultado);
 
     if($resultado !== false){
         $_SESSION['usuario'] = $usuario;

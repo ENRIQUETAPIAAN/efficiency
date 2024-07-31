@@ -39,8 +39,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if($errores == ''){
-        $statement = $conexion->prepare('INSERT INTO tb_usuarios_reporte (id_usuario, nombre, contra, administrador) VALUES (null, :nombre, :contra, :administrador)');
-        $statement->execute(array(':nombre' => $usuario, ':contra' => $password, ':administrador'=>$administrador));
+        $statement = $conexion->prepare('INSERT INTO tb_usuarios_reporte (id_usuario, nombre, pass, administrador) VALUES (null, :nombre, :pass, :administrador)');
+        $statement->execute(array(':nombre' => $usuario, ':pass' => $password, ':administrador'=>$administrador));
 
         header('Location: login.php');
     }

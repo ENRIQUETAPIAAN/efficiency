@@ -19,8 +19,32 @@
 
                     </div>
                     <div class="cont-perfil-usuario">
-                        <h2>Enrique Tapia</h2>
-                        <p>Administrador</p>
+                        <h2><?php echo $_SESSION['usuario']; ?></h2>
+                        <?php 
+
+                            try {
+                                $conexion = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
+                            } catch (PDOException $e) {
+                                echo "Error: " . $e->getMessage();
+                            }
+
+                            $statement = $conexion->prepare('SELECT administrador FROM tb_usuarios_reporte WHERE nombre = :nombre');
+                            $statement->execute(array(':nombre' => $_SESSION['usuario']));
+                            $resultado_admin = $statement->fetch();
+                            $resultado_admin = $resultado_admin['administrador'];
+
+                            if($resultado_admin == 0){
+                                $tipo_de_usuario = 'Usuario I';
+                                echo '<p>Usuario I</p>';
+                            } elseif($resultado_admin == 1){
+                                $tipo_de_usuario = 'Usuario II';
+                                echo '<p>Usuario II</p>';
+                            } elseif($resultado_admin == 2){
+                                $tipo_de_usuario = 'Administrador';
+                                echo '<p>Administrador</p>';
+                            }
+                    
+                        ?>
                     </div>
                 </div>
                 <input type="checkbox" id="menu-bar">

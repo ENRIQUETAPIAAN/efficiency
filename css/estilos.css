@@ -496,4 +496,5 @@ section .cont-form .cont-input-textarea label{
 .contenedor-login .registro .error ul{
     list-style: none;
     margin-top: 1rem;
+    font-size: 1.5rem;
 }
