@@ -1,9 +1,15 @@
 <?php 
 
-define('RUTA', '');
+define('RUTA', 'http://localhost/cursoPHP/efficiency/efficiency/inicio.php');
 
-$db_config = array(
+$db_config_reportes = array(
     'basedatos' => 'db_reportes',
+    'usuario' => 'root',
+    'pass' => ''
+);
+
+$db_config_usuarios = array(
+    'basedatos' => 'db_usuarios_reportes',
     'usuario' => 'root',
     'pass' => ''
 );
