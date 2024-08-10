@@ -39,15 +39,15 @@ function obtener_reporte_por_id($conexion, $id_reporte){
 
 function fecha($fecha){
     $timestamp = strtotime($fecha);
-    $dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-    $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    $dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+    $meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
     $dia = date('N', $timestamp) - 1;
     $dia_num = date('d', $timestamp);
     $mes = date('m', $timestamp) - 1;
     $year = date('Y', $timestamp);
 
-    $fecha = "$dias[$dia], $dia_num de $meses[$mes] del $year ";
+    $fecha = "$dias[$dia], $dia_num de $meses[$mes] del $year";
     return $fecha;
 }
 
