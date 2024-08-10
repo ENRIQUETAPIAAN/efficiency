@@ -27,4 +27,28 @@ function obtener_reportes($reportes_por_pagina, $conexion){
     return $sentencia->fetchAll();
 }
 
+function id_reporte($id_reporte){
+    return (int)limpiarDatos($id_reporte);
+}
+
+function obtener_reporte_por_id($conexion, $id_reporte){
+    $resultado = $conexion->query("SELECT * FROM tb_reportes WHERE id_reporte = $id_reporte");
+    $resultado = $resultado->fetchAll();
+    return ($resultado) ? $resultado : false;
+}
+
+function fecha($fecha){
+    $timestamp = strtotime($fecha);
+    $dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+    $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+    $dia = date('N', $timestamp) - 1;
+    $dia_num = date('d', $timestamp);
+    $mes = date('m', $timestamp) - 1;
+    $year = date('Y', $timestamp);
+
+    $fecha = "$dias[$dia], $dia_num de $meses[$mes] del $year ";
+    return $fecha;
+}
+
 ?>

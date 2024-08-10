@@ -3,34 +3,43 @@
         <section>
             <div class="contenedor-articulo-single">
                 <div class="cont-articulo-img">  
-                    <img src="img/p1.jpg">
+                    <img src="img/<?php echo $reporte['foto'] ?>">
                 </div>
                 <div class="cont-articulo-info">
-                    <p class="bold">Autor: <span>Enrique Tapia</span></p>
-                    <p class="bold">Fecha: <span>miércoles, 17 de julio del 2024</span></p>
-                    <p class="bold">Eficiencia: <span>100%</span></p>
-                    <p class="bold">Producción Real: <span>448</span></p>
-                    <p class="bold">Producción Programada: <span>448</span></p>
+                    <p class="bold">Fecha: <span><?php echo fecha($reporte['fecha']); ?></span></p>
+                    <p class="bold">Turno: <span><?php echo $reporte['turno']; ?></span></p>
+                    <p class="bold">Celula: <span><?php echo $reporte['celula']; ?></span></p>
+                    <p class="bold">Eficiencia: <span>
+                        <?php 
+                            $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;
+                            echo round($eficiencia,0);
+                        ?>
+                        %
+                    </span></p>
+                    <p class="bold">Producción Real: <span><?php echo $reporte['p_real']; ?></span></p>
+                    <p class="bold">Producción Programada: <span><?php echo $reporte['p_programada']; ?></span></p>
+                    <p class="bold">Autor: <span><?php echo $reporte['nombre']; ?></span></p>
                     <div class="btn">
                         <a href="editar-reporte.html" class="btn-sin">Eliminar</a>
                         <a href="editar-reporte.html" class="btn-gris">Editar</a>
                     </div>
                 </div>
                 <div class="cont-articulo-info2">
-                    <p class="bold">TVC Perdido: <span>$ 5,000.00</span></p>
-                    <p class="bold">Mano de obra: <span>$ 3,500.00</span></p>
-                    <p class="bold">Maquinaria: <span>$ 1,000.00</span></p>
-                    <p class="bold">Material: <span>$ 500.00</span></p>
-                    <p class="bold">Metodo: <span>$ 0.00</span></p>
-                    <p class="bold">Medición: <span>$ 0.00</span></p>
-                    <p class="bold">Mano de obra: <span>$ 0.00</span></p>
+                    <p class="bold">TVC Perdido: <span>$ 
+                        <?php
+                            $tvc_perdido = $reporte['mano_de_obra'] + $reporte['maquinaria'] + $reporte['material'] + $reporte['metodo'] + $reporte['medicion'] + $reporte['madre_natur'];
+                            echo number_format($tvc_perdido);
+                        ?>
+                    </span></p>
+                    <p class="bold">Mano de obra: <span>$ <?php echo number_format($reporte['mano_de_obra']); ?></span></p>
+                    <p class="bold">Maquinaria: <span>$ <?php echo number_format($reporte['maquinaria']); ?></span></p>
+                    <p class="bold">Material: <span>$ <?php echo number_format($reporte['material']); ?></span></p>
+                    <p class="bold">Metodo: <span>$ <?php echo number_format($reporte['metodo']); ?></span></p>
+                    <p class="bold">Medición: <span>$ <?php echo number_format($reporte['medicion']); ?></span></p>
+                    <p class="bold">Mano de obra: <span>$ <?php echo number_format($reporte['madre_natur']); ?></span></p>
                 </div>
                 <div class="cont-articulo-info">
-                    <p class="bold">Comentarios: <span>Lorem ipsum dolor, sit amet consectetur adipisicing 
-                        elit. Eos explicabo maiores, ex est odit nihil, dolores esse architecto modi aperiam 
-                        natus facere ullam! Provident itaque quo placeat quas ipsa a veniam doloribus 
-                        adipisci sequi aperiam! Deleniti asperiores sunt facilis quaerat commodi fugit ex ea 
-                        minus, consectetur voluptates, tenetur, suscipit quidem.</span></p>
+                    <p class="bold">Comentarios: <span><?php echo $reporte['comentarios']; ?></span></p>
                 </div>
                 
             </div>

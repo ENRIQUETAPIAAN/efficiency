@@ -14,7 +14,7 @@
                     </div>
                     <div class="cont-info-report">
                         <div class="cont-titulo-report">
-                            <h2><?php echo $reporte['fecha']; ?></h2>
+                            <h2><?php echo fecha($reporte['fecha']); ?></h2>
                             <p class="eficiencia">
                                 <?php
 
@@ -33,7 +33,7 @@
                                 <p>TVC perdido: $
                                     <?php
                                         $tvc_perdido = $reporte['mano_de_obra'] + $reporte['maquinaria'] + $reporte['material'] + $reporte['metodo'] + $reporte['medicion'] + $reporte['madre_natur'];
-                                        echo $tvc_perdido;
+                                        echo number_format($tvc_perdido);
                                     ?>
                                 </p>
                             </div>

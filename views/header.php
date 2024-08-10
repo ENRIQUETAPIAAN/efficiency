@@ -46,9 +46,13 @@
                                 $tipo_de_usuario = 'Coordinador';
                                 echo "<p>$tipo_de_usuario</p>";
                             } elseif($resultado_admin == 2){
+                                $tipo_de_usuario = 'Focus Factory Manager';
+                                echo "<p>$tipo_de_usuario</p>";
+                            } elseif($resultado_admin == 3){
                                 $tipo_de_usuario = 'Administrador';
                                 echo "<p>$tipo_de_usuario</p>";
                             }
+                            
                     
                         ?>
                     </div>
@@ -58,7 +62,7 @@
     
                 <nav class="menu">
                     <a href="inicio.php">Inicio</a>
-                    <a href="agregar-reporte.php">Registro</a>
+                    <a href="agregar-reporte.php">Agregar Reporte</a>
                     <a href="cerrar.php">Cerrar Sesión</a>
                 </nav>
             </div>
