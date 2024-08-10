@@ -27,6 +27,15 @@ function obtener_reportes($reportes_por_pagina, $conexion){
     return $sentencia->fetchAll();
 }
 
+function numero_paginas($reportes_por_pagina, $conexion){
+    $total_reportes = $conexion->prepare('SELECT FOUND_ROWS() as total');
+    $total_reportes->execute();
+    $total_reportes = $total_reportes->fetch()['total'];
+
+    $numero_paginas = ceil($total_reportes / $reportes_por_pagina);
+    return $numero_paginas;
+}
+
 function id_reporte($id_reporte){
     return (int)limpiarDatos($id_reporte);
 }
