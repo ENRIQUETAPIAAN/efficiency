@@ -211,7 +211,7 @@ section .cont-info-report .cont-titulo-report{
 }
 section .cont-info-report .cont-info{
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 45% 55%;
 }
 
 section .cont-info-report .cont-info .autor{

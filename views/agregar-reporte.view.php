@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/07702d4e25.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    <title>Agregar Reporte</title>
-</head>
-<body>
-    <div class="contenedor-general">
-        <header>
-            <div class="contenedor">
-                <div class="cont-admin">
-                    <div class="img">
-
-                    </div>
-                    <div class="cont-perfil-usuario">
-                        <h2>Enrique Tapia</h2>
-                        <p>Administrador</p>
-                    </div>
-                </div>
-                <input type="checkbox" id="menu-bar">
-                <label class="fa-solid fa-bars" for="menu-bar"></label>
-    
-                <nav class="menu">
-                    <a href="index.html">Inicio</a>
-                    <a href="agregar-reporte.html">Registro</a>
-                    <a href="cerrar.php">Cerrar Sesión</a>
-                </nav>
-            </div>
-        </header>
+<?php $pagina = 'Agregar Reporte'; ?>
+<?php require 'header.php'?>
         <section>
             <div class="cont-form">
                 <form action="" name="login">

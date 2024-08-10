@@ -1,93 +1,48 @@
 <?php $pagina = 'Inicio - Reportes'; ?>
 <?php require 'header.php'?>
+
+
         <section>
             <div class="contenedor-reportes">
-                <a href="reporte.html" class="cont-report">
+
+                <?php foreach($reportes as $reporte): ?>
+                
+
+                <a href="reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="cont-report">
                     <div class="cont-img-report">
-                        <img src="img/p1.jpg">
+                        <img src="img/<?php echo $reporte['foto']; ?>">
                     </div>
                     <div class="cont-info-report">
                         <div class="cont-titulo-report">
-                            <h2>Lunes, 15 de julio del 2024</h2>
-                            <p class="eficiencia">100%</p>
+                            <h2><?php echo $reporte['fecha']; ?></h2>
+                            <p class="eficiencia">
+                                <?php
+
+                                    $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;
+                                    echo round($eficiencia, 0);
+
+                                ?>
+                                %
+                            </p>
                         </div>
                         <div class="cont-info">
                             <div class="cont-informacion">
-                                <p>P. real: 448</p>
-                                <p>P. programada: 448</p>
-                                <p>TVC perdido: $ 5,000.00</p>
+                                <p>Celula: <?php echo $reporte['celula']; ?></p>
+                                <p>P. real: <?php echo $reporte['p_real']; ?></p>
+                                <p>P. programada: <?php echo $reporte['p_programada']; ?></p>
+                                <p>TVC perdido: $
+                                    <?php
+                                        $tvc_perdido = $reporte['mano_de_obra'] + $reporte['maquinaria'] + $reporte['material'] + $reporte['metodo'] + $reporte['medicion'] + $reporte['madre_natur'];
+                                        echo $tvc_perdido;
+                                    ?>
+                                </p>
                             </div>
-                            <p class="autor">Enrique Tapia</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="reporte.html" class="cont-report">
-                    <div class="cont-img-report">
-                        <img src="img/p1.jpg">
-                    </div>
-                    <div class="cont-info-report">
-                        <div class="cont-titulo-report">
-                            <h2>Lunes, 15 de julio del 2024</h2>
-                            <p class="eficiencia">100%</p>
-                        </div>
-                        <div class="cont-info">
-                            <div class="cont-informacion">
-                                <p>P. real: 448</p>
-                                <p>P. programada: 448</p>
-                                <p>TVC perdido: $ 5,000.00</p>
-                            </div>
-                            <p class="autor">Enrique Tapia</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="reporte.html" class="cont-report">
-                    <div class="cont-img-report">
-                        <img src="img/p1.jpg">
-                    </div>
-                    <div class="cont-info-report">
-                        <div class="cont-titulo-report">
-                            <h2>Lunes, 15 de julio del 2024</h2>
-                            <p class="eficiencia">100%</p>
-                        </div>
-                        <div class="cont-info">
-                            <div class="cont-informacion">
-                                <p>P. real: 448</p>
-                                <p>P. programada: 448</p>
-                                <p>TVC perdido: $ 5,000.00</p>
-                            </div>
-                            <p class="autor">Enrique Tapia</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="reporte.html" class="cont-report">
-                    <div class="cont-img-report">
-                        <img src="img/p1.jpg">
-                    </div>
-                    <div class="cont-info-report">
-                        <div class="cont-titulo-report">
-                            <h2>Lunes, 15 de julio del 2024</h2>
-                            <p class="eficiencia">100%</p>
-                        </div>
-                        <div class="cont-info">
-                            <div class="cont-informacion">
-                                <p>P. real: 448</p>
-                                <p>P. programada: 448</p>
-                                <p>TVC perdido: $ 5,000.00</p>
-                            </div>
-                            <p class="autor">Enrique Tapia</p>
+                            <p class="autor"><?php echo $reporte['nombre']; ?></p>
                         </div>
                     </div>
                 </a>
                 
+                <?php endforeach; ?>
+                
             </div>
-            <div class="paginacion">
-                <ul>
-                    <li class="disabled">&laquo;</li>
-                    <p>1 de 10</p>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-            </div>
-        </section>
-    </div>
-</body>
-</html>
+<?php require 'paginacion.php';?>

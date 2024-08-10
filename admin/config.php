@@ -15,7 +15,7 @@ $db_config_usuarios = array(
 );
 
 $blog_config = array(
-    'post_por_pagina' => '6',
+    'reportes_por_pagina' => '6',
     'carpeta_imagenes' => 'img/'
 );
 
