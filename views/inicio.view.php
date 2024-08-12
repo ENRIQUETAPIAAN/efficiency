@@ -2,7 +2,14 @@
 <?php require 'header.php'?>
 
 
+
         <section>
+            <div class="cont-busqueda">
+                <form name="busqueda" class="buscar" action="<?php echo RUTA; ?>/buscar.php" method="get">
+                    <input type="text" name="busqueda" placeholder="Buscar:">
+                    <button type="submit" class="icono fa fa-search"></button>
+                </form>
+            </div>
             <div class="contenedor-reportes">
 
                 <?php foreach($reportes as $reporte): ?>

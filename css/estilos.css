@@ -150,6 +150,12 @@ section{
     margin-top: 70px;
     padding: 20px 0;
 }
+.cont-busqueda{
+    width: 100%;
+}
+.cont-busqueda .buscar{
+    width: 50%;
+}
 .contenedor-reportes{
     width: 95%;
     margin: auto;
