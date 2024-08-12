@@ -11,12 +11,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = hash('sha512',$password);
 
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
+        $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
 
-    $statement = $conexion->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre AND pass = :pass');
+    $statement = $conexion_usuarios->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre AND pass = :pass');
     $statement->execute(array(':nombre' => $usuario, ':pass' => $password));
     $resultado = $statement->fetch();
     

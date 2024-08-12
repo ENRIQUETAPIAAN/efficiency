@@ -1,9 +1,26 @@
 <?php $numero_paginas = numero_paginas($blog_config['reportes_por_pagina'], $conexion); ?>
+
 <div class="paginacion">
                 <ul>
-                    <li class="disabled">&laquo;</li>
-                    <p>1 de 10</p>
-                    <li><a href="#">&raquo;</a></li>
+
+                    <?php if(pagina_actual() == 1): ?>
+                        <li class="disabled">&laquo;</li>
+                    <?php else: ?>
+                        <li><a href="inicio.php?p=<?php echo pagina_actual() - 1; ?>">&laquo;</a></li>
+                    <?php endif; ?>
+
+
+
+                    <p><?php echo pagina_actual(); ?> de <?php echo $numero_paginas; ?></p>
+
+                    
+
+                    <?php if(pagina_actual() == $numero_paginas): ?>
+                        <li class="disabled">&raquo;</li>
+                    <?php else: ?>
+                        <li><a href="inicio.php?p=<?php echo pagina_actual() + 1; ?>">&raquo;</a></li>
+                    <?php endif; ?>
+                    
                 </ul>
             </div>
         </section>

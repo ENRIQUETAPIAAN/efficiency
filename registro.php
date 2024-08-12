@@ -16,12 +16,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $errores .= '<li>Por favor rellena todos los datos correctamente.</li>';
     } else{
         try {
-            $conexion = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte','root','');
+            $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte','root','');
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
 
-        $statement = $conexion->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre LIMIT 1');
+        $statement = $conexion_usuarios->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre LIMIT 1');
         $statement->execute(array(':nombre' => $usuario));
         
         $resultado = $statement->fetch();
@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if($errores == ''){
-        $statement = $conexion->prepare('INSERT INTO tb_usuarios_reporte (id_usuario, nombre, pass, administrador) VALUES (null, :nombre, :pass, :administrador)');
+        $statement = $conexion_usuarios->prepare('INSERT INTO tb_usuarios_reporte (id_usuario, nombre, pass, administrador) VALUES (null, :nombre, :pass, :administrador)');
         $statement->execute(array(':nombre' => $usuario, ':pass' => $password, ':administrador'=>$administrador));
 
         header('Location: login.php');

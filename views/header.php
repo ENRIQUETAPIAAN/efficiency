@@ -29,12 +29,12 @@
                         <?php 
 
                             try {
-                                $conexion = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
+                                $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
                             } catch (PDOException $e) {
                                 echo "Error: " . $e->getMessage();
                             }
 
-                            $statement = $conexion->prepare('SELECT administrador FROM tb_usuarios_reporte WHERE nombre = :nombre');
+                            $statement = $conexion_usuarios->prepare('SELECT administrador FROM tb_usuarios_reporte WHERE nombre = :nombre');
                             $statement->execute(array(':nombre' => $_SESSION['usuario']));
                             $resultado_admin = $statement->fetch();
                             $resultado_admin = $resultado_admin['administrador'];

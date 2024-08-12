@@ -21,7 +21,7 @@ function pagina_actual(){
 }
 
 function obtener_reportes($reportes_por_pagina, $conexion){
-    $inicio = ((pagina_actual() > 1) ? pagina_actual() * $reportes_por_pagina - $reportes_por_pagina : 0 );
+    $inicio = (pagina_actual() > 1) ? pagina_actual() * $reportes_por_pagina - $reportes_por_pagina : 0 ;
     $sentencia = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM tb_reportes LIMIT $inicio, $reportes_por_pagina");
     $sentencia->execute();
     return $sentencia->fetchAll();
