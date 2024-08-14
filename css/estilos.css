@@ -28,9 +28,12 @@ header{
     width: 95%;
     margin: auto;
 }
-/*.cont-perfil-usuario{
+section .cont-form h2{
+    color: #555555;
+}
+.cont-perfil-usuario{
     display: none;
-}*/
+}
 .img{
     float: left;
     width: 5.5rem;

@@ -63,6 +63,9 @@
                 <nav class="menu">
                     <a href="inicio.php">Inicio</a>
                     <a href="agregar-reporte.php">Agregar Reporte</a>
+                    <a href="mensaje.php">Agregar Boleta Scrap</a>
+                    <a href="mensaje.php">Agregar Hoja Rotación</a>
+                    <a href="mensaje.php">Toma de Tiempos</a>
                     <a href="cerrar.php">Cerrar Sesión</a>
                 </nav>
             </div>
