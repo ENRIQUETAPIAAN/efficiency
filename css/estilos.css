@@ -38,10 +38,14 @@ section .cont-form h2{
     float: left;
     width: 5.5rem;
     height: 5.5rem;
-    background-image: url(../img/usuario.jpg);
-    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /*background-image: url(../img/usuario.jpg);
+    background-size: cover;*/
     border-radius: 50%;
-    background-position: center;
+    /*background-position: center;*/
     border: .1rem solid #555555;
 }
 header .contenedor{

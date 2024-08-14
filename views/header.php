@@ -1,3 +1,16 @@
+<?php 
+try {
+    $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+$statement = $conexion_usuarios->prepare('SELECT * FROM tb_usuarios_reporte WHERE nombre = :nombre');
+$statement->execute(array(':nombre' => $_SESSION['usuario']));
+$statement = $statement->fetch();
+$resultado_admin = $statement['administrador'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,22 +35,14 @@
             <div class="contenedor">
                 <div class="cont-admin">
                     <div class="img">
-
+                        <?php 
+                            $iniciales_nom = substr($statement['nombre'], 0, 2);
+                            echo '<h1>'.strtoupper($iniciales_nom) .'</h1>';
+                        ?>
                     </div>
                     <div class="cont-perfil-usuario">
                         <h2><?php echo $_SESSION['usuario']; ?></h2>
                         <?php 
-
-                            try {
-                                $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
-                            } catch (PDOException $e) {
-                                echo "Error: " . $e->getMessage();
-                            }
-
-                            $statement = $conexion_usuarios->prepare('SELECT administrador FROM tb_usuarios_reporte WHERE nombre = :nombre');
-                            $statement->execute(array(':nombre' => $_SESSION['usuario']));
-                            $resultado_admin = $statement->fetch();
-                            $resultado_admin = $resultado_admin['administrador'];
 
                             if($resultado_admin == 0){
                                 $tipo_de_usuario = 'Cell Leader';
