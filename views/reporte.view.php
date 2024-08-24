@@ -39,7 +39,7 @@
                     <p class="bold">Mano de obra: <span>$ <?php echo number_format($reporte['madre_natur']); ?></span></p>
                 </div>
                 <div class="cont-articulo-info">
-                    <p class="bold">Comentarios: <span><?php echo $reporte['comentarios']; ?></span></p>
+                    <p class="bold">Comentarios: <span><?php echo nl2br($reporte['comentarios']); ?></span></p>
                 </div>
                 
             </div>
