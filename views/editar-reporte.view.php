@@ -7,7 +7,7 @@
                     <div class="cont-imagen">
                         <img src="img/subir2.png" alt="">
                         <input type="file" name="thumb">
-                        <input type="hidden" name="thumb-guardada" value="<?php echo $reporte['foto']; ?>">
+                        <input type="hidden" name="foto-guardada" value="<?php echo $reporte['foto']; ?>">
                     </div>
                     <div class="cont-input margin-bottom">
                         <div class="cont-input-number">
@@ -43,7 +43,7 @@
                             </div>
                             <div class="cont-input-number">
                                 <label for="">Turno</label>
-                                <select name="turno" id="">
+                                <select name="turno">
                                 <?php 
 
                                     if(!empty($reporte['turno'])){
