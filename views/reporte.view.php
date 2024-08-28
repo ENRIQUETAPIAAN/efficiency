@@ -20,8 +20,8 @@
                     <p class="bold">Producción Programada: <span><?php echo $reporte['p_programada']; ?></span></p>
                     <p class="bold">Autor: <span><?php echo $reporte['nombre']; ?></span></p>
                     <div class="btn">
-                        <a href="editar-reporte.html" class="btn-sin">Eliminar</a>
-                        <a href="editar-reporte.html" class="btn-gris">Editar</a>
+                        <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-sin">Eliminar</a>
+                        <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-gris">Editar</a>
                     </div>
                 </div>
                 <div class="cont-articulo-info2">
