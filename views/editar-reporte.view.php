@@ -93,10 +93,15 @@
                         <label for="">Comentarios</label>
                         <textarea name="comentarios"><?php echo $reporte['comentarios']; ?></textarea>
                     </div>
-                    <div class="btn">
-                        <a class="btn-sin" onclick="login.submit()">Eliminar</a>
-                        <a class="btn-gris" onclick="login.submit()">Actualizar</a>
-                    </div>
+                    <?php if($reporte['nombre'] == $_SESSION['usuario']):?>
+                        <div class="btn">
+                            <a class="btn-sin" onclick="login.submit()">Eliminar</a>
+                            <a class="btn-gris" onclick="login.submit()">Actualizar</a>
+                        </div>
+                    <?php else:?>
+                        <div class="btn">
+                        </div>
+                    <?php endif; ?>
                     
                 </form>
             </div>

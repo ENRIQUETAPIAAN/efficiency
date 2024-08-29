@@ -19,10 +19,18 @@
                     <p class="bold">Producción Real: <span><?php echo $reporte['p_real']; ?></span></p>
                     <p class="bold">Producción Programada: <span><?php echo $reporte['p_programada']; ?></span></p>
                     <p class="bold">Autor: <span><?php echo $reporte['nombre']; ?></span></p>
-                    <div class="btn">
-                        <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-sin">Eliminar</a>
-                        <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-gris">Editar</a>
-                    </div>
+
+                    <?php if($reporte['nombre'] == $_SESSION['usuario']): ?>
+                        <div class="btn">
+                            <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-sin">Eliminar</a>
+                            <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-gris">Editar</a>
+                        </div>
+                    <?php else: ?>
+                        <div class="btn">
+                        </div>
+                    <?php endif; ?>
+
+
                 </div>
                 <div class="cont-articulo-info2">
                     <p class="bold">TVC Perdido: <span>$ 

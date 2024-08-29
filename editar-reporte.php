@@ -33,7 +33,7 @@ if(isset($_SESSION['usuario'])){
             $foto = $_FILES['thumb']['name'];
         }
 
-        $statement = $conexion_reporte->prepare('UPDATE tb_reportes SET p_real = :p_real, p_programada = p_programada, 
+        $statement = $conexion_reporte->prepare('UPDATE tb_reportes SET p_real = :p_real, p_programada = :p_programada, 
         celula = :celula, turno = :turno, mano_de_obra = :mano_de_obra, maquinaria = :maquinaria, material = :material, 
         metodo = :metodo, medicion = :medicion, madre_natur = :madre_natur, comentarios = :comentarios, foto = :foto 
         WHERE id_reporte = :id_reporte');
