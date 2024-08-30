@@ -22,15 +22,24 @@
                     <div class="cont-info-report">
                         <div class="cont-titulo-report">
                             <h2><?php echo fecha($reporte['fecha']); ?></h2>
-                            <p class="eficiencia">
-                                <?php
-
-                                    $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;
-                                    echo round($eficiencia, 0);
-
-                                ?>
-                                %
-                            </p>
+                            <?php 
+                                $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;
+                            ?>
+                            <?php if($eficiencia < 85): ?>
+                                <p class="bad">
+                                    <?php
+                                        echo round($eficiencia, 0);
+                                    ?>
+                                    %
+                                </p>
+                            <?php else: ?>
+                                <p class="eficiencia">
+                                    <?php
+                                        echo round($eficiencia, 0);
+                                    ?>
+                                    %
+                                </p>
+                            <?php endif; ?>
                         </div>
                         <div class="cont-info">
                             <div class="cont-informacion">

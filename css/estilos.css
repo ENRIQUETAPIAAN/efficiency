@@ -159,10 +159,32 @@ section{
 }
 .cont-busqueda{
     width: 100%;
+    display: grid;
+    justify-content: end;
 }
 .cont-busqueda .buscar{
-    width: 50%;
+    margin-right: 2rem;
 }
+.cont-busqueda .buscar input[type="text"]{
+    width: 25rem;
+    padding: 1rem;
+    border: .1rem solid #E4E4E4;
+    border-radius: .5rem 0 0 .5rem;
+
+}
+.cont-busqueda .buscar button{
+    padding: 1.1rem;
+    border: .1rem solid #555555;
+    border-radius: 0 .5rem .5rem 0;
+    margin-left: -.3rem;
+}
+.cont-busqueda .buscar button:hover{
+    cursor: pointer;
+    background-color: #555555;
+    color: #E4E4E4;
+    border: .1rem solid #555555;
+}
+
 .contenedor-reportes{
     width: 95%;
     margin: auto;
@@ -207,6 +229,16 @@ section .cont-info-report{
     padding: 1rem;
     background-color: #F9F9F9;
     border-radius: 0 0 5px 5px;
+}
+section .cont-info-report .bad{
+    padding: .25rem 0;
+    border-radius: .5rem;
+    color: #97030d;
+    font-weight: bold;
+    background-color: #e65b75;
+    text-align: center;
+    font-size: 1.3rem;
+    border: .1rem solid #97030d;
 }
 section .cont-info-report .eficiencia{
     padding: .25rem 0;
@@ -274,9 +306,18 @@ section .btn a:hover{
 section .btn .btn-sin{
     color: #555555;
 }
+section .btn .eliminar{
+    background-color: #df2547;
+    color: #E4E4E4;
+    border: .1rem solid #df2547;
+}
+section .btn .eliminar:hover{
+    background-color: #f06e85;
+    color: #E4E4E4;
+}
 section .btn .btn-gris{
     background-color: #555555;
-    color: #fff;
+    color: #E4E4E4;
 }
 section .contenedor-articulo-single .cont-articulo-info{
     padding: 2rem 0;
@@ -457,9 +498,11 @@ section .cont-form .cont-input-textarea label{
 }
 .contenedor-login .registro .cont-btn-login p{
     font-size: 1.5rem;
+    color: #F9F9F9;
 }
 .contenedor-login .registro .cont-btn-login a{
-    color: #555555;
+    /*color: #555555;*/
+    color: #F9F9F9;
     font-weight: bold;
     font-size: 1.4rem;
     text-decoration: none;

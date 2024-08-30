@@ -11,8 +11,14 @@
                     <p class="bold">Celula: <span><?php echo $reporte['celula']; ?></span></p>
                     <p class="bold">Eficiencia: <span>
                         <?php 
-                            $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;
-                            echo round($eficiencia,0);
+                            if($reporte['p_programada'] > 0){
+                                $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;
+                                echo round($eficiencia,0);
+                            } else{
+                                $eficiencia = 0;
+                                echo $eficiencia;
+                            }
+                           
                         ?>
                         %
                     </span></p>
@@ -22,7 +28,7 @@
 
                     <?php if($reporte['nombre'] == $_SESSION['usuario']): ?>
                         <div class="btn">
-                            <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-sin">Eliminar</a>
+                            <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-sin eliminar">Eliminar</a>
                             <a href="editar-reporte.php?id_reporte=<?php echo $reporte['id_reporte']; ?>" class="btn-gris">Editar</a>
                         </div>
                     <?php else: ?>

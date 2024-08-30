@@ -95,7 +95,7 @@
                     </div>
                     <?php if($reporte['nombre'] == $_SESSION['usuario']):?>
                         <div class="btn">
-                            <a class="btn-sin" onclick="login.submit()">Eliminar</a>
+                            <a class="btn-sin eliminar" href="borrar.php?id_reporte=<?php echo $reporte['id_reporte']; ?>">Eliminar</a>
                             <a class="btn-gris" onclick="login.submit()">Actualizar</a>
                         </div>
                     <?php else:?>

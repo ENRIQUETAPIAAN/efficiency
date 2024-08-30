@@ -80,7 +80,7 @@
                         <textarea name="comentarios" id=""></textarea>
                     </div>
                     <div class="btn">
-                        <a href="index.php">Volver</a>
+                        <a class="btn-sin" href="index.php">Cancelar</a>
                         <a class="btn-gris" onclick="login.submit()">Guardar</a>
                     </div>
                     

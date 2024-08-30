@@ -51,6 +51,7 @@ function fecha($fecha){
     $dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
     $meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
+    $hora = date('G',$timestamp);
     $dia = date('N', $timestamp) - 1;
     $dia_num = date('d', $timestamp);
     $mes = date('m', $timestamp) - 1;
