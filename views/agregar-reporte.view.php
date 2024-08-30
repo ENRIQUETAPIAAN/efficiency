@@ -7,6 +7,7 @@
                         <img src="img/subir2.png" alt="">
                         <input type="file" name="thumb">
                     </div>
+                    
                     <div class="cont-input margin-bottom">
                         <div class="cont-input-number">
                             <label for="">Programado</label>
@@ -18,6 +19,10 @@
                         </div>
                     </div>
                     <div class="cont-6m">
+                            <div class="fecha">
+                                <label for="">Fecha</label>
+                                <input type="date" name="fecha_manual" id="" placeholder="">
+                            </div>
                         <div class="cont-input">
                             <div class="cont-input-number">
                                 <label for="">Celula</label>
@@ -78,6 +83,10 @@
                     <div class="cont-input-textarea">
                         <label for="">Comentarios</label>
                         <textarea name="comentarios" id=""></textarea>
+                    </div>
+                    <div class="cont-input margin-bottom">
+                        <div class="cont-input-number">
+                        </div>
                     </div>
                     <div class="btn">
                         <a class="btn-sin" href="index.php">Cancelar</a>

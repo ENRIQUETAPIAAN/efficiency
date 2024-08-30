@@ -382,6 +382,18 @@ section .cont-form .cont-input .cont-input-number{
     display: grid;
     grid-template-columns: 100%;
 }
+section .cont-form form .cont-6m .fecha label{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #555555;
+}
+section .cont-form form .cont-6m .fecha input[type="date"]{
+    padding: 1rem;
+    margin-left: 1rem;
+    border: .1rem solid #E4E4E4;
+    border-radius: .5rem;
+}
 section .cont-form .cont-input .cont-input-number label{
     font-size: 2rem;
     font-weight: bold;
