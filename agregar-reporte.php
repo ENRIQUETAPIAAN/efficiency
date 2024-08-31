@@ -10,6 +10,7 @@ if(isset($_SESSION['usuario'])){
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $fecha_manual = $_POST['fecha_manual'];
         $p_programada = limpiarDatos($_POST['p_programada']);
         $p_real = limpiarDatos($_POST['p_real']);
         $celula = $_POST['celula'];
@@ -49,8 +50,8 @@ if(isset($_SESSION['usuario'])){
         $nombre_usuario = $_SESSION['usuario'];
 
         $statement = $conexion->prepare('INSERT INTO tb_reportes (id_reporte, nombre, p_real, p_programada, celula, turno, mano_de_obra,
-        maquinaria, material, metodo, medicion, madre_natur, comentarios, foto) VALUES (null, :nombre, :p_real, :p_programada, :celula, 
-        :turno, :mano_de_obra, :maquinaria, :material, :metodo, :medicion, :madre_natur, :comentarios, :foto)');
+        maquinaria, material, metodo, medicion, madre_natur, comentarios, foto, fecha_manual) VALUES (null, :nombre, :p_real, :p_programada, :celula, 
+        :turno, :mano_de_obra, :maquinaria, :material, :metodo, :medicion, :madre_natur, :comentarios, :foto, :fecha_manual)');
 
         $statement->execute(array(':nombre' => $nombre_usuario, 
         ':p_real' => $p_real, 
@@ -64,7 +65,9 @@ if(isset($_SESSION['usuario'])){
         ':medicion' => $medicion, 
         ':madre_natur' => $madre_natur, 
         ':comentarios' => $comentarios, 
-        ':foto' => $_FILES['thumb']['name']));
+        ':foto' => $_FILES['thumb']['name'],
+        ':fecha_manual' => $fecha_manual
+    ));
 
         header('Location: index.php');
     }

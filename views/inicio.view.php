@@ -21,7 +21,7 @@
                     </div>
                     <div class="cont-info-report">
                         <div class="cont-titulo-report">
-                            <h2><?php echo fecha($reporte['fecha']); ?></h2>
+                            <h2><?php echo fecha($reporte['fecha_manual']); ?></h2>
                             <?php 
                                 if($reporte['p_programada'] > 0){
                                     $eficiencia = ($reporte['p_real'] / $reporte['p_programada']) * 100;

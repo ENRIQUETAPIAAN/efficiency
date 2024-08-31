@@ -20,6 +20,10 @@
                         </div>
                     </div>
                     <div class="cont-6m">
+                            <div class="fecha">
+                                <label for="">Fecha</label>
+                                <input type="date" name="fecha_manual" value="<?php echo $reporte['fecha_manual']; ?>">
+                            </div>
                         <div class="cont-input">
                             <div class="cont-input-number">
                                 <label for="">Celula</label>

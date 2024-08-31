@@ -7,7 +7,7 @@
                         <img src="img/subir2.png" alt="">
                         <input type="file" name="thumb">
                     </div>
-                    
+
                     <div class="cont-input margin-bottom">
                         <div class="cont-input-number">
                             <label for="">Programado</label>

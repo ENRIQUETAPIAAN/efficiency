@@ -6,7 +6,7 @@
                     <img src="img/<?php echo $reporte['foto'] ?>">
                 </div>
                 <div class="cont-articulo-info">
-                    <p class="bold">Fecha: <span><?php echo fecha($reporte['fecha']); ?></span></p>
+                    <p class="bold">Fecha: <span><?php echo fecha($reporte['fecha_manual']); ?></span></p>
                     <p class="bold">Turno: <span><?php echo $reporte['turno']; ?></span></p>
                     <p class="bold">Celula: <span><?php echo $reporte['celula']; ?></span></p>
                     <p class="bold">Eficiencia: <span>

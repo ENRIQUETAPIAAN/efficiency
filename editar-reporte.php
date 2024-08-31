@@ -10,6 +10,7 @@ if(isset($_SESSION['usuario'])){
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $fecha_manual = $_POST['fecha_manual'];
         $id_reporte = $_POST['id_reporte'];
         $p_programada = $_POST['p_programada'];
         $p_real = $_POST['p_real'];
@@ -35,8 +36,8 @@ if(isset($_SESSION['usuario'])){
 
         $statement = $conexion_reporte->prepare('UPDATE tb_reportes SET p_real = :p_real, p_programada = :p_programada, 
         celula = :celula, turno = :turno, mano_de_obra = :mano_de_obra, maquinaria = :maquinaria, material = :material, 
-        metodo = :metodo, medicion = :medicion, madre_natur = :madre_natur, comentarios = :comentarios, foto = :foto 
-        WHERE id_reporte = :id_reporte');
+        metodo = :metodo, medicion = :medicion, madre_natur = :madre_natur, comentarios = :comentarios, foto = :foto, 
+        fecha_manual = :fecha_manual WHERE id_reporte = :id_reporte');
 
         $statement->execute(array(':p_real' => $p_real, 
         ':p_programada' => $p_programada, 
@@ -50,7 +51,10 @@ if(isset($_SESSION['usuario'])){
         ':madre_natur' => $madre_natur, 
         ':comentarios' => $comentarios, 
         ':foto' => $foto,
-        ':id_reporte' => $id_reporte));
+        ':id_reporte' => $id_reporte,
+        ':fecha_manual' => $fecha_manual
+        ));
+
 
         header('Location: index.php');
 
