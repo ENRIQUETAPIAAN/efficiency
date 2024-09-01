@@ -9,7 +9,7 @@ $db_config_reportes = array(
 );
 
 $db_config_usuarios = array(
-    'basedatos' => 'db_usuarios_reportes',
+    'basedatos' => 'db_usuarios_reporte',
     'usuario' => 'root',
     'pass' => ''
 );

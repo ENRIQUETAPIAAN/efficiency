@@ -1,6 +1,6 @@
 <?php 
 try {
-    $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
+    $conexion_usuarios = new PDO('mysql:host=localhost;dbname='.$db_config_usuarios['basedatos'], $db_config_usuarios['usuario'], $db_config_usuarios['pass']);
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }

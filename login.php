@@ -1,5 +1,5 @@
 <?php session_start();
-
+require 'admin/config.php';
 $errores = '';
 if(isset($_SESSION['usuario'])){
     header('Location: index.php');
@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = hash('sha512',$password);
 
     try {
-        $conexion_usuarios = new PDO('mysql:host=localhost;dbname=db_usuarios_reporte', 'root', '');
+        $conexion_usuarios = new PDO('mysql:host=localhost;dbname='.$db_config_usuarios['basedatos'], $db_config_usuarios['usuario'], $db_config_usuarios['pass']);
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
