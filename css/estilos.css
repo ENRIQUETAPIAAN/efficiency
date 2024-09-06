@@ -266,6 +266,22 @@ section .cont-info-report .cont-info .autor{
     text-align: right;
 }
 
+section .btn-excel{
+    text-align: left;
+    align-items: center;
+}
+section .btn-excel a{
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+    padding: .8rem 3rem;
+    background-color: #019742;
+    color: #fff;
+    text-decoration: none;
+    border-radius: .5rem;
+}
+section .btn-excel a:hover{
+    background-color: #0d6633;
+}
 
 
 section .contenedor-articulo-single{

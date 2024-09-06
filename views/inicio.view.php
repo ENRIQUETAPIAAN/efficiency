@@ -4,6 +4,9 @@
 
 
         <section>
+            <div class="btn-excel">
+                <a href="excel_reportes.php">Excel</a>
+            </div>
             <div class="cont-busqueda">
                 <form name="busqueda" class="buscar" action="buscar.php" method="get">
                     <input type="text" name="busqueda" placeholder="Buscar:">
